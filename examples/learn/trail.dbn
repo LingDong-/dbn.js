@@ -1,0 +1,5 @@
+// https://everything2.com/title/Design+by+Numbers+language+reference
+forever
+{
+  set [<mouse 1> <mouse 2>] 100
+}

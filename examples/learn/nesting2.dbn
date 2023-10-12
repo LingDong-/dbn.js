@@ -1,0 +1,1 @@
+// Nesting 2paper 0repeat A 0 100{   repeat B 0 100   {      set [A B] (((60 - A) * (B - 30)) / 2)   }}

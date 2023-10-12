@@ -1,0 +1,110 @@
+// https://mitpress.mit.edu/9780262632447/design-by-numbers/
+
+// %%%%%%%%%%%%%%%%%%%%%%%%
+// %                      %
+// %                      %
+// %                      %
+// %    A Small Scene     %
+// %                      %
+// %                      %
+// %                      %
+// %%%%%%%%%%%%%%%%%%%%%%%%
+
+// Overview:	
+
+// First, a simple background is	
+// created, consisting of 3 lines	
+// on a gray backdrop. These lines	
+// imply the corner of some room.	
+// What room could this be? It	
+// could be any room of course.	
+// To say that it is *this* room	
+// over *that* room would surely	
+// be unjust. Thus, assume it	
+// stands for the representation	
+// of *any* room, for now.
+
+// Second, a chair is rendered in	
+// order to establish the three-	
+// dimensional space better. Of	
+// course more chairs and other	
+// obiects would help to concep-	
+// tually cement the depicted space.	
+
+// Alas, I am too far beyond the due	
+// date for this book and must	
+// suffer the fate of an empty room	
+// for now.	
+
+// Third, recognizing that the room	
+// does indeed look too visually	
+// impoverished to leave this	
+// example comfortably, I stare	
+// at my tabletop and the mouse	
+// looks back at me ... longing	
+// to belong to the scenery. And	
+// thus a small dab of virtual	
+// ink gives it that dose of hope.
+	
+// ********* setup backdrop	
+Paper 73	
+
+// ********* render the 'room'	
+Pen 50	
+Line 33 100 33 60	
+Line 0 20 33 60	
+Line 100 52 33 60	
+
+
+// Pause a bit to contemplate how
+// nice an empty room looks, and
+// consider how putting things into
+// it might mess things up. But
+// remember that you don't want
+// you parents to worry, so you
+// have to put something in there.
+
+// ********* buy some furniture
+// ********* paint it in white
+Pen 0
+// ********* a place to sit
+Line 45 52 63 50
+Line 45 52 38 42
+Line 56 40 63 50
+Line 38 42 56 40
+// ********* needs some legs
+Line 42 41 42 32
+Line 53 39 53 31
+Line 46 40 46 37
+Line 58 42 58 36
+// ********* something to lean against
+Line 46 61 62 59
+Line 46 61 46 69
+Line 62 67 46 69
+Line 62 67 62 59
+// ********* have to support it
+Line 54 51 54 59
+
+//
+// A tiny door in the wall (well,
+// not really a door but a 'hole')
+// is just big enough for a
+// friend to come and go as he/she
+// pleases.
+
+// ********* a hole in the wall
+Pen 20
+Line 10 32 10 36
+Line 10 36 12 40
+Line 12 40 14 40
+Line 14 40 14 38
+
+// Comments aren't usually seen
+// by other people, and thus you
+// can ramble like this all you
+// like. The fact that this will
+// be published verbatim perhaps
+// defeats the private nature of
+// a good session of comments,
+// but for the sake of education
+// we must do all that we can.

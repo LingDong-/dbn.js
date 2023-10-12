@@ -1,0 +1,75 @@
+##########
+#        #
+# DBN.JS #
+#        #
+##########
+
+A reimplementation of Design by Numbers (dbn.media.mit.edu, 
+maedastudio.com/1999/dbn) in JavaScript, running in your browser.
+
+USAGE
+-----
+
+- The user interface mimics that of the original DBN java applet
+- Click the "load" button to try the original DBN examples
+- To learn DBN, you could read the book, or check out some online refs:
+  - https://dbn.media.mit.edu/info/vocabulary.html
+  - https://everything2.com/title/Design+by+Numbers+language+reference
+
+MAJOR DIFFERENCES
+-----------------
+
+- Additional commands:
+  - `__print n` prints the value of its argument to the browser console
+- Additional functions:
+  - `<__width>`  to get the current canvas width
+  - `<__height>` to get the current canvas height
+  
+These addtions are preceded by double underscore `__` to avoid naming 
+collision.
+
+Slightly different redraw/refresh mechanism, and support for debug stepping:
+
+- When the `option.stepping` is set to zero:
+  - If `option.auto_refresh` is non zero, canvas is redrawn at the end of 
+    each `forever` loop iteration
+  - Canvas is redrawn at least every `option.max_stuck_ms` milliseconds
+    to avoid freezing
+- When `option.stepping` is set to a number `n`, canvas is redrawn every `n`
+  instructions
+- All of the above can be overridden by `norefresh`, `refresh` and `pause`
+  commands
+- Click `step` button to advance one instruction at a time.
+  
+Options can be accessed via the "setting" button.
+
+Some old examples might require insertion of `norefresh` and `refresh` at
+places (or tweaking of above options) to run nicely.
+
+More lenient syntax:
+
+- Curly braces `{}` need not be surrounded by newlines.
+- All arguments to the `size` command can be math or variables. If the
+  third argument to `size` is a variable name, the name must not collide 
+  with those of builtin commands.
+
+IMPLEMENTATION NOTES
+--------------------
+
+The interpreter consists of 4 separate parts:
+- The tokenizer, which breaks the source code into symbols
+- The parser, which builds the abstract syntax tree (AST)
+- The "bytecode" compiler, which compiles the AST into custom "assembly"
+- The VM, which runs the assembly
+
+The interpreter can also be used as a JavaScript library. See /dbn.js. 
+
+Graphics is internally rendered on the CPU by rasterizing to a matrix, 
+but user inputs (mouse, keyboard) are left as external "hooks" so the 
+user can integrate into their own GUI environment not limited to the
+Web canvas API that currently powers this web demo.
+
+(c) 2023 Lingdong Huang. Future Sketches Group, MIT Media Lab.
+
+The original Design by Numbers by John Maeda et al. is 
+(c) 1999 Aesthetics + Computation Group, MIT Media Laboratory.

@@ -1,0 +1,17 @@
+// https://quod.lib.umich.edu/j/jahc/3310410.0003.118/--design?rgn=main;view=fulltext
+
+Paper 0
+
+//gradated response
+
+Repeat A 0 100
+
+{
+
+Pen A
+
+Line 100 0 0 A
+
+line 0 0 A 100
+
+}

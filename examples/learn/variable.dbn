@@ -1,0 +1,1 @@
+// Setting a variablepaper 100set A 50 //creates a variable A and sets it to value 50set B 20pen 60line 0 A 100 Bpen 10line B 0 A 100

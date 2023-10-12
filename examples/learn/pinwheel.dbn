@@ -1,0 +1,19 @@
+// https://dbn.media.mit.edu/info/vocabulary.html
+
+Command drawRect x1 y1 x2 y2 color
+{
+  Pen color
+  Line x1 y1 x1 y2
+  Line x1 y1 x2 y1
+  Line x2 y1 x2 y2
+  Line x2 y2 x1 y2
+}
+Command pinwheel x y size color
+{
+  drawRect (x-size) y x (y+(size/2)) color
+  drawRect x y (x+(size/2)) (y+size) color
+  drawRect x (y-(size/2)) (x+size) y color
+  drawRect (x-(size/2)) (y-size) x y color
+}
+
+pinwheel 50 50 12 100
