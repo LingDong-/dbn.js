@@ -1,0 +1,58 @@
+// dbngraphics
+command triangle h1 v1 h2 v2 h3 v3
+{
+  line h1 v1 h2 v2
+  line h2 v2 h3 v3
+  line h3 v3 h1 v1
+}
+command rectangle left bot right top
+{
+  line left bot right bot
+  line right bot right top
+  line right top left top
+  line left top left bot
+}
+
+command circlepixels cx cy dx dy v
+{
+  set [(cx+dx) (cy+dy)] v
+  set [(cx+dx) (cy-dy)] v
+  set [(cx-dx) (cy+dy)] v
+  set [(cx-dx) (cy-dy)] v
+  set [(cx+dy) (cy+dx)] v
+  set [(cx+dy) (cy-dx)] v
+  set [(cx-dy) (cy+dx)] v
+  set [(cx-dy) (cy-dx)] v
+}
+
+command circle cx cy radius v
+{
+  set x 0
+  set y radius
+  set d (1-radius)
+  circlepixels cx cy x y v
+  // 707/1000 approximates square root of 0.5 = cos(45)
+  repeat x 0 (radius*707/1000)
+  {
+    set tempd d
+    smaller? tempd 0
+    {
+      set d (d+(2*x)+3)
+    }
+    notsmaller? tempd 0
+    {
+      set d (d+(2*(x-y))+5)
+      set y (y-1)
+    }
+    circlepixels cx cy x y v
+  }
+}
+command testdbngraphics
+{
+field 2 2 98 98 15
+pen 100
+triangle 50 96 50 4 96 50
+circle 50 50 46 100
+rectangle 14 23 68 77
+}
+

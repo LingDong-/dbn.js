@@ -1,0 +1,1 @@
+// Questionspaper 5pen 95repeat A 0 100{   same? A 30   {      pen 50      line A 0 A 100   }   same? A 30   {      pen 50      line A 0 A 100   }   smaller? A 10   {      pen (A+5)      line A 0 A 100   }   notsmaller? A 90   {      pen (A-50)      line A 0 A 100   }}

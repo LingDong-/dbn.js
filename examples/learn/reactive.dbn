@@ -1,0 +1,1 @@
+// Reactive graphicsforever{   set x (<mouse 1>/2)   set y (<mouse 2>/2)   repeat a 0 x   {      paper 50      field  0 0 50 100 a      field  50 0 100 100 (<mouse 2>/2)   }   repeat a x 0   {      paper 50      field  0 0 50 100 a      field  50 0 100 100 (<mouse 2>/2)   }}

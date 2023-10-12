@@ -1,0 +1,1 @@
+// Time 1forever{   set msec <time 4>   set sec <time 3>    set min <time 2>    set hour <time 2>   set [hour 50] 0   set [min 50] 20   set [sec 50] 50   set [msec 50] 80   repeat x 0 100   {      notsame? [x 50] 0      {         pen ([x 50] - 1)         line (x-1) 0 (x-1) 100      }      pen 100      line 100 0 100 100   }}

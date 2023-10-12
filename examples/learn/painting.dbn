@@ -1,0 +1,13 @@
+paper 0
+pen 100
+forever{  line 0 50 <mouse 1> <mouse 2>  same? <mouse 3> 100  {    line 100 50 <mouse 1> <mouse 2>  }}
+
+
+// void draw() {
+//   background(255);
+//   stroke(0);
+//   line(0, 50, mouseX, mouseY);
+//   if (mousePressed == true) {
+//     line(100, 50, mouseX, mouseY);	
+//   }		
+// }

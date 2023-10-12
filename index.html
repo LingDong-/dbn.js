@@ -1,0 +1,184 @@
+<head>
+  <meta charset="UTF-8">
+  <style>
+    table{
+      border-collapse:collapse;
+    }
+    canvas {
+      image-rendering: pixelated;
+    }
+    td{
+/*       border:1px solid black; */
+    }
+    textarea:focus{
+      outline: 0;
+    }
+    textarea{
+      font-family:monospace;
+      line-height:15px;
+      font-size:13px;
+      letter-spacing:0px;
+      resize:none;
+    }
+    .btn{
+      cursor:pointer;
+      fitler:saturate(0);
+    }
+    .btn:hover .b-green{
+      fill:#6BA44F;
+    }
+    .btn:hover .b-blue{
+      fill:#7198C8;
+    }
+    .btn:hover .b-yellow{
+      fill:#BF9B46;
+    }
+    .btn:hover .b-gray{
+      fill:#CCCCCC;
+    }
+    .btn:active .b-bg{
+      fill:#404040;
+    }
+    .unselectable {
+       -moz-user-select: -moz-none;
+       -khtml-user-select: none;
+       -webkit-user-select: none;
+       -ms-user-select: none;
+       user-select: none;
+    }
+    
+    .selopt:hover{
+      background:#CCCCCC;
+    }
+
+  </style>
+</head>
+<body style="margin:0px;overflow:hidden;font-family:sans-serif;background:black">
+  <div style="background:#404040;color:white; font-size:10px; overflow:hidden; width:100%; height: 10px; white-space: nowrap; padding:10px;border-bottom:0px solid black">
+    DBN.JS
+    &nbsp;
+    <span style="color:gray">
+      © 2023 Future Sketches Group, MIT Media Lab.
+      The original <span style="color:white;cursor:pointer" onclick="window.open('https://maedastudio.com/1999/dbn')">Design by Numbers</span> is © 1999 Aesthetic + Computation Group, MIT Media Laboratory
+    </span>
+  </div>
+  <table style="height:calc(100% - 30px);width:100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td style="height:100%;width:350px;min-width:350px;vertical-align:top;background:#123262;">
+        <div class="unselectable" style="width:100%;background:#999999;height:30px;padding:5px;">
+          <span class="btn" id="btn-play">
+            <svg width="30" height="30">
+              <circle class="b-bg" cx="15" cy="15" r="15" fill="#666666"></circle>
+              <polygon class="b-green" points="11 8 22 15 11 22" fill="#999999"></polygon>
+            </svg>
+          </span>
+          <span class="btn" id="btn-stop">
+            <svg width="30" height="30">
+              <circle class="b-bg" cx="15" cy="15" r="15" fill="#666666"></circle>
+              <rect class="b-yellow" x="10" y="10" width="10" height="10" fill="#999999"></rect>
+            </svg>
+          </span>
+          <span class="btn" id="btn-step">
+            <svg width="30" height="30">
+              <circle class="b-bg" cx="15" cy="15" r="15" fill="#666666"></circle>
+              <rect class="b-yellow" x="9" y="8" width="3" height="14" fill="#999999"></rect>
+              <polygon class="b-green" points="15,8 24,15 15,22" fill="#999999"></polygon>
+            </svg>
+          </span>
+          <span style="float:right;margin-right:10px">
+          <span class="btn" id="btn-open">
+            <svg width="30" height="30">
+              <rect class="b-bg" x="0" y="0" width="30" height="30" fill="#666666"></rect>
+              <polygon class="b-blue" points="15,5 23,13 18,13 18,18 12,18 12,13 7,13" fill="#999999"></polygon>
+              <rect class="b-yellow" x="7" y="22" width="16" height="3" fill="#999999"></rect>
+            </svg>
+          </span>
+          <span class="btn" id="btn-save">
+            <svg width="30" height="30">
+              <rect class="b-bg" x="0" y="0" width="30" height="30" fill="#666666"></rect>
+              <polygon class="b-blue" points="15,5 23,13 18,13 18,18 12,18 12,13 7,13" fill="#999999" transform="rotate(180 15 12)"></polygon>
+              <rect class="b-yellow" x="7" y="22" width="16" height="3" fill="#999999"></rect>
+            </svg>
+          </span>
+          <span class="btn" id="btn-print">
+            <svg width="30" height="30">
+              <rect class="b-bg" x="0" y="0" width="30" height="30" fill="#666666"></rect>
+              <polygon class="b-blue" points="15,5 23,13 18,13 18,18 12,18 12,13 7,13" fill="#999999" transform="rotate(90 15 12) translate(3 5)"></polygon>
+              <rect class="b-yellow" x="20" y="4" width="10" height="22" fill="#999999"></rect>
+              <rect class="b-bg" x="22" y="6" width="8" height="18" fill="#666666"></rect>
+              <rect class="b-yellow" x="25" y="10" width="5" height="2" fill="#999999"></rect>
+              <rect class="b-yellow" x="25" y="14" width="5" height="2" fill="#999999"></rect>
+              <rect class="b-yellow" x="25" y="18" width="5" height="2" fill="#999999"></rect>
+            </svg>
+          </span>
+          <span class="btn" id="btn-format">
+            <svg width="30" height="30">
+              <rect class="b-bg" x="0" y="0" width="30" height="30" fill="#666666"></rect>
+              <rect class="b-yellow" x="6" y="6" width="13" height="2" fill="#999999"></rect>
+              <rect class="b-yellow" x="11" y="10" width="13" height="2" fill="#999999"></rect>
+              <rect class="b-yellow" x="11" y="14" width="13" height="2" fill="#999999"></rect>
+              <rect class="b-yellow" x="6" y="18" width="13" height="2" fill="#999999"></rect>
+              <rect class="b-yellow" x="6" y="22" width="13" height="2" fill="#999999"></rect>
+            </svg>
+          </span>
+          <span class="btn" id="btn-setting">
+            <svg width="30" height="30">
+              <rect class="b-bg" x="0" y="0" width="30" height="30" fill="#666666"></rect>
+              <circle class="b-blue" cx="15" cy="15" r="9" fill="#999999"></circle>
+              
+              <rect class="b-blue" x="4" y="13" width="22" height="4" fill="#999999"></rect>
+              <rect class="b-blue" x="4" y="13" width="22" height="4" fill="#999999" transform="rotate(90 15 15)"></rect>
+              <rect class="b-blue" x="4" y="13" width="22" height="4" fill="#999999" transform="rotate(90 15 15)"></rect>
+              <rect class="b-blue" x="4" y="13" width="22" height="4" fill="#999999" transform="rotate(45 15 15)"></rect>
+              <rect class="b-blue" x="4" y="13" width="22" height="4" fill="#999999" transform="rotate(135 15 15)"></rect>
+              <circle class="b-bg" cx="15" cy="15" r="5" fill="#666666"></circle>
+            </svg>
+          </span>
+          <span class="btn" id="btn-info">
+            <svg width="30" height="30">
+              <rect class="b-bg" x="0" y="0" width="30" height="30" fill="#666666"></rect>
+              <circle class="b-yellow" cx="15" cy="15" r="11" fill="#999999"></circle>
+              <circle class="b-bg" cx="15" cy="15" r="9" fill="#666666"></circle>
+              <text class="b-blue" text-anchor="middle" x="14.5" y="21" font-size="19" font-family="Times New Roman" font-style="italic" fill="#999999" font-weight="bold">i</text>
+              
+            </svg>
+          </span>
+          </span>
+        </div>
+        <div style="width:100%;background:#406595;text-align:center;">
+          <span style="float:right;width:0px;height:0px;overflow:visible;transform:translate(-35px, 5px);">
+            <span class="btn" id="btn-fullscr">
+              <svg width="30" height="30">
+                <rect class="b-bg" x="0" y="0" width="30" height="30" fill="#406595"></rect>
+
+                <polygon class="b-gray" points="5,25 15,25 5,15" fill="#7198C8"></polygon>
+                <polygon class="b-gray" points="5,25 15,25 5,15" fill="#7198C8" transform="rotate(180 15 15)"></polygon>
+                <polygon class="b-gray" points="5,22 8,25 25,8 22,5" fill="#7198C8"></polygon>
+<!--                 <polygon class="b-bg" points="5,22 8,25 25,8 22,5" fill="#406595" transform="rotate(90 15 15)"></polygon> -->
+              </svg>
+            </span>
+          </span>
+          <canvas id="cnv"></canvas>
+
+        </div>
+        <div id="under-cnv">
+          
+        </div>
+      </td>
+      <td style="height:100%;vertical-align:top;border-bottom:1px solid black">
+        <div id="msg" style="width:100%;background:#CCCCCC;height:14px;padding:8px;font-size:14px;white-space: nowrap;overflow:hidden">
+          
+        </div>
+        <div id="codewrap" style="position:relative;width:100%;height:calc(100% - 35px);overflow:scroll;background:white">
+
+          <textarea id="src" spellcheck="false" style="margin-left:35px;width:calc(100% - 35px);height:100%;border:none;color:rgba(0,0,0,0.05);caret-color: black;background:white">// enter program
+</textarea>
+          <pre id="dst" style="pointer-events:none; position:absolute; left:2px; top:2px; margin:0px; padding:0px; font-size:13px; overflow:hidden; white-space:pre-wrap; width:calc(100% - 0px); height:calc(100% - 4px); line-height:15px;"></pre>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+<script src="dbn.js"></script>
+<script src="index.js"></script>

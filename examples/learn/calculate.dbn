@@ -1,0 +1,1 @@
+// Calculate - shifting and scalingpaper 0repeat A 0 100{  set [A (30+A/2)] 85 //all calculations must be contained within parenthesis  set [(A*4) (53-A)] 40  set [(A*6) (A*A/2+6)] 60}

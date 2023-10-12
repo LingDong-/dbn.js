@@ -1,0 +1,1 @@
+// Making commandspaper 50command square x y s c //define your own actions with 'command'{   pen c   line x y x (y+s)   line x (y+s) (x+s) (y+s)   line (x+s) (y+s) (x+s) y   line (x+s) y x y}repeat A 0 9{   repeat B 0 9   {      square (A*10+3) (B*10+3) 3 (A+B*10)   }}
