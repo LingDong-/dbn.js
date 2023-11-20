@@ -1,0 +1,13 @@
+// paper airplane
+Paper 30
+Pen 100
+Pen 0
+Repeat A 20 85
+{
+  Line 75 55 A 25
+}
+Pen 40
+Repeat A 20 85
+{
+  Line 95 45 A 25
+}

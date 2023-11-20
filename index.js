@@ -8,7 +8,7 @@ let EXAMPLES = `
 book/room.dbn             gallery/graymachine.dbn   gallery/nervousguy.dbn    gallery/rockettime.dbn  learn/gradres.dbn   learn/paper.dbn      learn/time2.dbn
 gallery/amoebic.dbn       gallery/headsortails.dbn  gallery/paramecium.dbn    gallery/thehunt.dbn     learn/line.dbn      learn/pinwheel.dbn   learn/trail.dbn
 gallery/bandedclock.dbn   gallery/intersecting.dbn  gallery/plaid.dbn         gallery/tuftball.dbn    learn/looping.dbn   learn/questions.dbn  learn/variable.dbn
-gallery/dancinguy.dbn     gallery/meeber.dbn        gallery/probing.dbn       learn/calculate.dbn     learn/nesting1.dbn  learn/reactive.dbn
+gallery/dancinguy.dbn     gallery/meeber.dbn        gallery/probing.dbn       learn/calculate.dbn     learn/nesting1.dbn  learn/reactive.dbn   book/paper-plane.dbn
 gallery/dancingy.dbn      gallery/merging.dbn       gallery/quantitative.dbn  learn/commands.dbn      learn/nesting2.dbn  learn/repeating.dbn
 gallery/grainsofrain.dbn  gallery/missshow.dbn      gallery/raininglines.dbn  learn/dots.dbn          learn/painting.dbn  learn/time1.dbn
 `.split(/\n| /g).filter(x=>x.length).sort();
