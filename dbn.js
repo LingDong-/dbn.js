@@ -19,10 +19,10 @@ let DBN = new function(){
   
   function rset(){
     Object.assign(state,{
-      W:100,
-      H:100,
+      W:101,
+      H:101,
       pixsize:1,
-      canvas:new Array(100*100).fill(0),
+      canvas:new Array(101*101).fill(0),
       color:100,
       vars:[{}],
       args:[],
