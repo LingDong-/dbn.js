@@ -19,10 +19,10 @@ let DBN = new function(){
   
   function rset(){
     Object.assign(state,{
-      W:100,
-      H:100,
+      W:101,
+      H:101,
       pixsize:1,
-      canvas:new Array(100*100).fill(0),
+      canvas:new Array(101*101).fill(0),
       color:100,
       vars:[{}],
       args:[],
@@ -291,15 +291,15 @@ let DBN = new function(){
   }
 
   function putpix(x,y,val){
-    x-=1;
-    y-=1;
+    // x-=1;
+    // y-=1;
     if (x < 0 || x >= state.W) return;
     if (y < 0 || y >= state.H) return;
     state.canvas[y*state.W+x] = val;
   }
   function getpix(x,y){
-    x-=1;
-    y-=1;
+    // x-=1;
+    // y-=1;
     x = Math.min(Math.max(x,0),state.W-1);
     y = Math.min(Math.max(y,0),state.H-1);
     // console.log(state.canvas[y*state.W+x]);
@@ -308,7 +308,6 @@ let DBN = new function(){
   
   
   function plot_line(x0, y0, x1, y1, val){
-    // console.log(arguments);
     x0 = ~~x0;
     y0 = ~~y0;
     x1 = ~~x1;

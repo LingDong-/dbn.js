@@ -7,6 +7,8 @@
 A reimplementation of Design by Numbers (dbn.media.mit.edu, 
 maedastudio.com/1999/dbn) in JavaScript, running in your browser.
 
+GITHUB: https://github.com/LingDong-/dbn.js
+
 USAGE
 -----
 
